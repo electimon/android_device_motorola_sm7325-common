@@ -1,4 +1,14 @@
 <manifest version="2.0" type="device" target-level="5">
+    <hal format="hidl" override="true">
+        <name>android.hardware.media.c2</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IComponentStore</name>
+            <instance>default</instance>
+            <instance>software</instance>
+        </interface>
+    </hal>
     <hal format="hidl">
         <name>android.hardware.audio</name>
         <transport>hwbinder</transport>
@@ -201,15 +211,6 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>vendor.qti.hardware.alarm</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IAlarm</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
         <name>vendor.qti.hardware.bluetooth_audio</name>
         <transport>hwbinder</transport>
         <version>2.0</version>
@@ -338,15 +339,6 @@
         </interface>
     </hal>
     <hal format="hidl">
-        <name>vendor.qti.hardware.perf</name>
-        <transport>hwbinder</transport>
-        <version>2.2</version>
-        <interface>
-            <name>IPerf</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl">
         <name>vendor.qti.hardware.qconfig</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -426,7 +418,7 @@
     <hal format="hidl">
         <name>vendor.qti.hardware.radio.qtiradio</name>
         <transport>hwbinder</transport>
-        <version>2.6</version>
+        <version>2.7</version>
         <interface>
             <name>IQtiRadio</name>
             <instance>slot1</instance>
