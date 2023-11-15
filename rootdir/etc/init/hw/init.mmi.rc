@@ -366,13 +366,6 @@ service vendor.hal-fps-sh /vendor/bin/init.oem.fingerprint2.sh
     group system
     oneshot
 
-service fpc_ident /vendor/bin/fpc_ident
-    class late_start
-    user system
-    group system
-    oneshot
-    disabled
-
 service vendor.touch-dead-sh /vendor/bin/init.oem.hw.sh -f
     class main
     user root
@@ -396,6 +389,9 @@ on property:vendor.hw.touch.status="dead"
 
 on property:vendor.hw.touch.status="ready"
     start vendor.touch-ready-sh
+
+on property:ro.boot.revision=*
+    setprop ro.boot.hardware.revision ${ro.boot.revision}
 
 service vendor.charge_only_mode /vendor/bin/charge_only_mode
     user root
